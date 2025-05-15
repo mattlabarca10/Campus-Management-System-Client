@@ -14,17 +14,13 @@ const CampusView = (props) => {
     return <p>Loading campus details...</p>;
   }
   const { id, name, address, description, imageUrl, students } = campus;
-  console.log("📍 Campus ID:", campus.id);
-  console.log("🏫 Name:", campus.name);
-  console.log("📍 Address:", campus.address);
-  console.log("📷 Image URL:", campus.imageUrl);
-  console.log("👥 Students:", campus.students);
+  
 
   // Render a single Campus view with list of its students
   return (
     <div>
       <h1>{name}</h1>
-      <img src={imageUrl || "https://media.licdn.com/dms/image/v2/D4E03AQF4AUHA8VkPgw/profile-displayphoto-shrink_800_800/B4EZXZZEutHcAk-/0/1743108985439?e=1752710400&v=beta&t=g4hkyF2PeySYNh-1Q21al8VD4aI2wcz4SUIOvNgYUjw"} width="200" alt={campus.name} />
+      <img src={imageUrl || "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png"} width="200" alt={campus.name} />
       <p>{address}</p>
       <p>{description}</p>
 

@@ -34,7 +34,7 @@ const AllCampusesView = (props) => {
           <Link to={`/campus/${campus.id}`}>
             <h2>{campus.name}</h2>
           </Link>
-          <img src={campus.imageUrl || "https://media.licdn.com/dms/image/v2/D5603AQGtp-JfRI2KGQ/profile-displayphoto-shrink_800_800/B56ZSbL16FHsAc-/0/1737770361104?e=1752710400&v=beta&t=A4DZOQofp1ZWBOfZUr4CHYsWdeXyCRe3-dHQGRsjBnU"} width="200" alt={campus.name} />
+          <img src={campus.imageUrl || "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png"} width="200" alt={campus.name} />
           <h4>Campus ID: {campus.id}</h4>
           <p>{campus.address}</p>
           <p>{campus.description}</p>

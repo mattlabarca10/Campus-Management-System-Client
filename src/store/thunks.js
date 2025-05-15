@@ -18,6 +18,7 @@ export const fetchAllCampusesThunk = () => async (dispatch) => {  // The THUNK
     dispatch(ac.fetchAllCampuses(res.data));
   } catch(err) {
     console.error(err);
+    //alert("Failed to fetch data.");
   }
 };
 
@@ -30,14 +31,20 @@ export const addCampusThunk = (campus) => async (dispatch) => {
     return res.data;
   } catch (err) {
     console.error(err);
+    //alert("Failed to fetch data.");
   }
 };
 
 // Edit Campus
 // THUNK CREATOR:
 export const editCampusThunk = (campus) => async (dispatch) => {
+  try {
   const res = await axios.put(`/api/campuses/${campus.id}`, campus);
   dispatch(ac.editCampus(res.data));
+  } catch (err) {
+    console.error(err);
+    //alert("Failed to fetch data.");
+  }
 };
  
 
@@ -49,6 +56,7 @@ export const deleteCampusThunk = campusId => async dispatch => {
     dispatch(ac.deleteCampus(campusId));
   } catch (err) {
     console.error(err);
+    //alert("Failed to fetch data.");
   }
 };
 
@@ -61,6 +69,7 @@ export const fetchCampusThunk = (id) => async (dispatch) => {  // The THUNK
     dispatch(ac.fetchCampus(res.data));
   } catch(err) {
     console.error(err);
+    //alert("Failed to fetch data.");
   }
 };
 
@@ -75,6 +84,7 @@ export const fetchAllStudentsThunk = () => async (dispatch) => {  // The THUNK
     dispatch(ac.fetchAllStudents(res.data));  
   } catch(err) {
     console.error(err);
+    //alert("Failed to fetch data.");
   }
 };
 
@@ -92,6 +102,7 @@ export const addStudentThunk = (student) => async (dispatch) => {  // The THUNK
     return res.data;
   } catch(err) {
     console.error(err);
+    //alert("Failed to fetch data.");
   }
 };
 
@@ -105,6 +116,7 @@ export const deleteStudentThunk = studentId => async dispatch => {  // The THUNK
     dispatch(ac.deleteStudent(studentId));
   } catch(err) {
     console.error(err);
+    //alert("Failed to fetch data.");
   }
 };
 
@@ -118,6 +130,7 @@ export const editStudentThunk = student => async dispatch => {  // The THUNK
     dispatch(ac.editStudent(updatedStudent));
   } catch(err) {
     console.error(err);
+    //alert("Failed to fetch data.");
   }
 };
 
@@ -132,6 +145,7 @@ export const fetchStudentThunk = id => async dispatch => {  // The THUNK
     dispatch(ac.fetchStudent(res.data));
   } catch(err) {
     console.error(err);
+    //alert("Failed to fetch data.");
   }
 };
 

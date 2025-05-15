@@ -48,10 +48,10 @@ class NewStudentContainer extends Component {
       lastname: this.state.lastname,
       email: this.state.email,
       imageUrl: this.state.imageUrl || undefined, 
-      gpa: this.state.gpa ? parseFloat(this.state.gpa) : null,
-      campusId: this.state.campusId || null
+      gpa: this.state.gpa ? parseFloat(this.state.gpa) : undefined,
+      campusId: this.state.campusId || undefined
     };    
-    console.log("SUBMITTING STUDENT:", student);
+    //console.log("SUBMITTING STUDENT:", student);
     // Add new student in back-end database
     let newStudent = await this.props.addStudent(student);
 
@@ -60,9 +60,9 @@ class NewStudentContainer extends Component {
       firstname: "", 
       lastname: "", 
       email: "",
-      imageUrl: "",
+      imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png",
       gpa: "",
-      campusId: null, 
+      campusId: "", 
       redirect: true, 
       redirectId: newStudent.id
     });    
