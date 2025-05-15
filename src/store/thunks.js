@@ -33,6 +33,14 @@ export const addCampusThunk = (campus) => async (dispatch) => {
   }
 };
 
+// Edit Campus
+// THUNK CREATOR:
+export const editCampusThunk = (campus) => async (dispatch) => {
+  const res = await axios.put(`/api/campuses/${campus.id}`, campus);
+  dispatch(ac.editCampus(res.data));
+};
+ 
+
 // Delete Campus
 // THUNK CREATOR:
 export const deleteCampusThunk = campusId => async dispatch => {

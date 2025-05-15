@@ -31,6 +31,11 @@ const CampusView = (props) => {
       <Link to={`/editcampus/${campus.id}`}>
         <button>Edit Campus</button>
       </Link>
+      <br/><br/>
+      <Link to="/">
+        <button onClick={() => deleteCampus(campus.id)}>Delete Campus</button>
+      </Link>
+
 
       <h3>Enrolled Students</h3>
       {students && students.length ? (

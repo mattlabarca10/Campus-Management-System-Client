@@ -30,6 +30,12 @@ const StudentView = ({student}) => {
       <Link to={`/editstudent/${student.id}`}>
         <button>Edit Student</button>
       </Link>
+      <br/><br/>
+      <Link to="/students">
+        <button onClick={() => deleteStudent(student.id)}>Delete Student</button>
+      </Link>
+
+
     </div>
   );
 };
