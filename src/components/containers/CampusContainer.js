@@ -24,7 +24,7 @@ class CampusContainer extends Component {
     return (
       <div>
         <Header />
-        <CampusView campus={this.props.campus} deleteStudent={this.props.deleteStudent} />
+        <CampusView campus={this.props.campus} deleteStudent={this.props.deleteStudent} deleteCampus={this.props.deleteCampus} />
       </div>
     );
   }
@@ -43,7 +43,8 @@ const mapState = (state) => {
 const mapDispatch = (dispatch) => {
   return {
     fetchCampus: (id) => dispatch(fetchCampusThunk(id)),
-    deleteStudent: (id) => dispatch(deleteStudentThunk(id))
+    deleteStudent: (id) => dispatch(deleteStudentThunk(id)),
+    deleteCampus: (id) => dispatch(deleteCampusThunk(id))
   };
 };
 
