@@ -1,5 +1,5 @@
 import "./App.css";
-
+import NewCampusContainer from './components/containers/NewCampusContainer';
 //Router
 import { Switch, Route } from "react-router-dom";
 //Components
@@ -22,6 +22,7 @@ const App = () => {
       <Switch>
         <Route exact path="/" component={HomePageContainer} />
         <Route exact path="/campuses" component={AllCampusesContainer} />
+        <Route exact path="/newcampus" component={NewCampusContainer} />
         <Route exact path="/campus/:id" component={CampusContainer} />
         <Route exact path="/students" component={AllStudentsContainer} />
         <Route exact path="/newstudent" component={NewStudentContainer} />
