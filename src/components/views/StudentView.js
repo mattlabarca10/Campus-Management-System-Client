@@ -16,7 +16,7 @@ const StudentView = ({student}) => {
       <h1>{firstname + " " + lastname}</h1>
       <p><strong>Email:</strong> {email || "N/A"}</p>
       <p><strong>GPA:</strong> {gpa !== null && gpa !== undefined ? gpa : "N/A"}</p>
-      <img src={imageUrl || "https://media.licdn.com/dms/image/v2/D4E03AQF4AUHA8VkPgw/profile-displayphoto-shrink_800_800/B4EZXZZEutHcAk-/0/1743108985439?e=1752710400&v=beta&t=g4hkyF2PeySYNh-1Q21al8VD4aI2wcz4SUIOvNgYUjw"} width="150" alt={firstname} />
+      <img src={imageUrl || "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png"} width="150" alt={firstname} />
 
       {campus ? (
         <p>

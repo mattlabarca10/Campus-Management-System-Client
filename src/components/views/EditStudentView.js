@@ -19,7 +19,7 @@ const EditStudentView = ({ student, handleChange, handleSubmit }) => {
         <input type="text" name="imageUrl" value={student.imageUrl} onChange={handleChange} /><br /><br />
 
         <label>GPA:</label><br />
-        <input type="number" step="0.1" name="gpa" value={student.gpa} onChange={handleChange} /><br /><br />
+        <input type="number" step="0.1" min="0.0" max="4.0" name="gpa" value={student.gpa} onChange={handleChange} /><br /><br />
 
         <label>Campus ID:</label><br />
         <input type="text" name="campusId" value={student.campusId} onChange={handleChange} /><br /><br />
