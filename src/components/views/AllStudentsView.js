@@ -32,6 +32,8 @@ const AllStudentsView = (props) => {
               <Link to={`/student/${student.id}`}>
                 <h2>{name}</h2>
               </Link>
+              <img src={student.imageUrl || "https://media.licdn.com/dms/image/v2/D4E03AQF4AUHA8VkPgw/profile-displayphoto-shrink_800_800/B4EZXZZEutHcAk-/0/1743108985439?e=1752710400&v=beta&t=g4hkyF2PeySYNh-1Q21al8VD4aI2wcz4SUIOvNgYUjw"} width="150" alt={name} />
+              <br/><br/>
               <button onClick={() => deleteStudent(student.id)}>Delete</button>
               <hr/>
             </div>

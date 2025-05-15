@@ -20,10 +20,13 @@ class NewStudentContainer extends Component {
     this.state = {
       firstname: "", 
       lastname: "", 
-      campusId: null, 
+      email: "",
+      imageUrl: "",
+      gpa: "",
+      campusId: null,
       redirect: false, 
       redirectId: null
-    };
+    };    
   }
 
   // Capture input data when it is entered
@@ -36,13 +39,19 @@ class NewStudentContainer extends Component {
   // Take action after user click the submit button
   handleSubmit = async event => {
     event.preventDefault();  // Prevent browser reload/refresh after submit.
-
+    if (this.state.gpa && (this.state.gpa < 0 || this.state.gpa > 4)) {
+      alert("GPA must be between 0.0 and 4.0");
+      return;
+    }    
     let student = {
-        firstname: this.state.firstname,
-        lastname: this.state.lastname,
-        campusId: this.state.campusId
-    };
-    
+      firstname: this.state.firstname,
+      lastname: this.state.lastname,
+      email: this.state.email,
+      imageUrl: this.state.imageUrl || undefined, 
+      gpa: this.state.gpa ? parseFloat(this.state.gpa) : null,
+      campusId: this.state.campusId || null
+    };    
+    console.log("SUBMITTING STUDENT:", student);
     // Add new student in back-end database
     let newStudent = await this.props.addStudent(student);
 
@@ -50,10 +59,13 @@ class NewStudentContainer extends Component {
     this.setState({
       firstname: "", 
       lastname: "", 
+      email: "",
+      imageUrl: "",
+      gpa: "",
       campusId: null, 
       redirect: true, 
       redirectId: newStudent.id
-    });
+    });    
   }
 
   // Unmount when the component is being removed from the DOM:
